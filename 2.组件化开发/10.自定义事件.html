@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 创建自定义事件 ： 主要是跟函数有关系，就是让函数能够具备事件的某些特性。
+
+        /*
+        function show(){
+            alert('同事1写的代码');
+            alert('同事2写的代码');
+            alert('同事3写的代码');
+        }                                            -----不利于协作开发，在同一个函数体内，多人写代码会乱
+        */
+
+        //  事件的特性 ----  相同的事件不会覆盖
+
+
+        window.addEventListener('click',function(){alert(1)},false);
+        window.addEventListener('click',function(){alert(2)},false);
+        window.addEventListener('click',function(){alert(3)},false);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

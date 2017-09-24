@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 什么是单例？      ->   就是永远只实例化一次，其实就是字面量对象声明方式
+
+        var box = {
+          user:'Lee',
+          run:function(){
+              return '运行中...';
+          }
+        };
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+
+        var box2 = function(){
+            var user = 'Lee';
+            function run(){
+                return '运行中...';
+            }
+            return {
+                publicGo:function(){                           //对外公共接口的特权方法
+                    return user + run();
+                }
+            };
+        }();
+
+        alert(box2.publicGo());
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        function Desk(){
+
+        };
+
+
+        var box3 = function(){
+            var user = 'Lee';
+            function run(){
+                return '运行中...';
+            };
+            var desk = new Desk();
+            desk.publicGo = function(){
+              return user + run();
+            };
+
+            return desk;
+        }();
+        alert(box3.publicGo());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+        * 闭包的优点，也是缺点，可以把局部变量驻留在内存当中
+        * */
+
+        //通过自我执行来执行匿名函数
+        (function(){
+            alert('Lee');
+        })();
+
+        //函数里面放一个匿名函数
+        function box(){
+            return function (){
+                return '闭包';
+            }
+        }
+
+        alert(box()());
+
+        //通过闭包返回局部变量
+        function box2(){
+            var age = 100;
+            return function (){
+                return age;
+            };
+        };
+
+        alert(box2()());
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="Drag.js"></script>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: darkorange;
+            position: absolute;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+            position: absolute;
+            left: 120px;
+        }
+        #div3{
+             width: 100px;
+             height: 100px;
+             background-color: darkred;
+             position: absolute;
+             left: 240px;
+         }
+        #div4{
+            width: 100px;
+            height: 100px;
+            background-color: forestgreen;
+            position: absolute;
+            left: 360px;
+        }
+    </style>
+    <script>
+        /*
+        组件开发：多组对象，像兄弟之间的关系（代码复用的一种形式）
+         */
+        window.onload = function(){
+            var d1 = new Drag('div1');
+            var d2 = new Drag('div2',function(){
+                document.title = 'hello';
+            });
+            var d3 = new Drag('div3', function () {
+                document.title = 'MintWind';
+            },function () {
+                document.title = '语带薄荷';
+            });
+            var d4 = new Drag('div4',function(){},function () {
+                   document.title='bye~bye~';
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+</body>
+</html>

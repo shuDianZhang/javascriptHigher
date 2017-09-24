@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv = document.getElementById('div1');
+            oDiv.onmousedown = function(ev){
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - this.offsetLeft;
+                var disY = oEvent.clientY - this.offsetTop;
+                document.onmousemove = function(ev){
+                        var oEvent = ev ||event;
+                        oDiv.style.left = oEvent.clientX - disX + 'px';
+                        oDiv.style.top = oEvent.clientY - disY + 'px';
+                }
+
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

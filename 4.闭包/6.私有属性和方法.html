@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Box(){
+            this.age = 100;                          //公有属性
+            this.run = function(){                   //公有方法
+              return '运行中...';
+            };
+        }
+
+        var box = new Box();
+
+        alert(box.age);
+        alert(box.run());
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        function Box2(){
+            var age = 100;                                  //私有变量
+            function run() {                                //私有函数
+                return '运行中..';
+            }
+            this.publicGo = function(){                     //对外可见的接口，特权方法
+               return age + run();
+            };
+        }
+
+        var box2 =new Box2();
+        alert(box2.publicGo());
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        // 通过构造函数传参
+        function Box3(value){
+            var user = value;                           //私有变量
+            this.getUser = function(){
+                return user;
+            };
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+        (function(){
+            var user = '' ;
+            //function Box(){}           //构造函数，在函数里面写构造函数，不支持，因为私有作用域里的函数，不是全局
+            Box4 = function(value){      //全局，构造函数;   直接写 Box4 前面不加var  就相当于全局
+                user = value;
+            };
+            Box4.prototype.getUser = function(){
+              return user;
+            };
+        })();
+
+
+        var box4 = new Box4('shu');
+        alert(box4.getUser());
+        var box44 = new Box4('jian');
+        alert(box4.getUser());
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

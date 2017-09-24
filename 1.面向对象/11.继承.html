@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+               call()可以修改函数的this的指向
+         */
+        function A(){
+            this.abc = 18;
+        }
+        A.prototype.show = function(){
+            alert(this.abc);
+        };
+
+        //希望B可以继承A的东西
+        function B(){
+            //this->new B();   这里this指向的是B的对象
+            A.call(this);
+        }
+
+        //B.prototype = A.prototype;
+        for(var i in A.prototype){
+            B.prototype[i] = A.prototype[i];
+        }
+        B.prototype.fn = function(){
+            alert('abc');
+        }
+
+        var objB = new B();
+        var objA = new A();
+        alert(objB.abc);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

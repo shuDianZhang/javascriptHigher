@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+             如何进行类型的判断？
+             方法一：
+             instanceof : 对象与构造函数在原型链上是否有关系
+             不是最好
+         */
+        function Aaa(){
+
+        }
+        var a1 = new Aaa();
+        alert(a1 instanceof Aaa);      //true
+        alert(a1 instanceof Array);    //false
+        alert(a1 instanceof Object);   //true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

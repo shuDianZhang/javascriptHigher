@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+              整个程序里只有一个，写起来比较简单
+         */
+        var json = {
+            name: 'shujian',
+            qq: '506975676',
+            showName: function(){
+                alert('我的名字叫:'+this.name);
+            },
+            showQQ: function(){
+                alert('我的QQ是:'+this.qq);
+            }
+        };
+        json.showName();
+
+        var rootJson = {
+        };
+
+        rootJson.common = {};
+        rootJson.oracle = {};
+        rootJson.site = {};
+
+        rootJson.common.show = function(){
+            alert(1);
+        }
+        rootJson.oracle.show = function(){
+            alert(2);
+        }
+        rootJson.site.show = function(){
+            alert(3);
+        }
+        rootJson.common.show();
+        rootJson.oracle.show();
+        rootJson.site.show();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var arr1 = [1,2,3];
+    var arr2 = arr1;       //只是将arr2指向arr1的数组空间，并没有复制一份数组给arr1
+    arr2.push(4);
+    alert(arr1);     //1,2,3,4
+    alert(arr2);     //1,2,3,4
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var a ={            //配置参数
+            name : '小明'
+        };
+        var b = {          //默认参数
+            name : '小强'
+        };
+        extend(b,a);
+        alert(b.name);
+
+//        配置参数覆盖默认参数，最后调取默认参数
+
+        function extend(obj1,obj2){
+            for(var attr in obj2){
+                obj1[attr] = obj2[attr];
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

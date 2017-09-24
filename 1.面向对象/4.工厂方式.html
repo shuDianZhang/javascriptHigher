@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //构造函数
+        /*
+            工厂方式缺点：
+                 1.没有new
+                 2.函数重复定义
+                    alert(obj1.showNamw == obj2.showName);  //false  占用大量系统资源
+         */
+        function createPerson(name,qq){
+            //原料
+            var obj = new Object();
+            //加工
+            obj.name = name;
+            obj.qq = qq;
+            obj.showName = function(){
+                alert('我的名字叫: ' + this.name);
+            };
+            obj.showQQ = function(){
+                alert('我的QQ号: ' + this.qq);
+            };
+            //出厂
+            return obj;
+        }
+        var obj1 = createPerson('shujian','506975676');
+        var obj2 = createPerson('shujiah','506975676');
+        // alert(obj1.showName);  这种写法会弹出函数里面的代码
+        // alert(obj1.showName());  这种写法会执行函数，并弹出undefine
+    </script>
+</head>
+<body>
+
+</body>
+</html>

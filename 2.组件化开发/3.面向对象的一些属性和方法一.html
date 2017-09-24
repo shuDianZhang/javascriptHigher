@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+         hasOwnProperty :  看是不是对象自身下面的属性，属于对象自己的独一无二的属性
+                           是： true   不是：false
+         constructor :     查看对象的构造函数
+         */
+        var arr=[];
+        arr.num = 10;
+        Array.prototype.num2 = 20;
+        alert(arr.hasOwnProperty('num'));
+
+        function Aaa(){
+
+        }
+        var a1 = new Aaa();
+        //  Aaa.prototype.constructor = Aaa;    //每一个函数都会有的
+        alert(a1.constructor);     //function Aaa(){}
+        alert(a1.constructor == Aaa);   //true
+ //     alert(a1.hasOwnProperty == Object.prototype.hasOwnProperty);  //true
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

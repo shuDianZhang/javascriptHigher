@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 模仿块级作用域
+        *
+        * */
+
+        function box(){
+            (function(){
+                for(var i=0 ; i<5 ; i++){
+                    alert(i);
+                }
+            })();                  //出了这个私有作用域，变量立即销毁
+            alert(i);              //这里的i就不认识了
+        }
+
+        box();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

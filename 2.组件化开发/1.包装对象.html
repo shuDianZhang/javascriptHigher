@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+            为什么字符串能够拥有方法，字符串不是对象
+
+           包装对象： 基本类型都有自己对应的包装对象;   如： String,Number,Boolean,
+
+         */
+        var str = new String('hello');
+        alert(typeof str);       //object
+
+        var str2 = 'hello';
+        str2.charAt(0);       //基本类型会找到对应的包装对象类型，然后包装对象把所有的属性和方法给了基本类型，然后包装对象消失
+
+        var str3 = 'hello';
+        str.number = 10;     //新建一个包装对象，然后该包装对象消失
+        alert(str.number);   //undefine   新建一个包装对象，与上一个包装对象不是同一个
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

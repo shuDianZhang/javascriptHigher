@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+              源字符 ->  方括号
+              [abc]pc     ->  apc bpc cpc
+
+              [0-9]
+              [a-z]       ->  a到z 范围
+
+
+              [^a-z]      ->  除了a到z，其它都要
+
+              [^0-9a-z]   ->  除了数字和字母
+
+              \d      ->  数字
+              \w      ->  英文，数字，下划线
+              \s      ->  空白字符
+
+              \D      ->
+              \W      ->  与上面相反
+              \S      ->
+
+
+              {n}     正好出现n次                 [1-9]\d{7}
+              {n,m}   最少n次，最多m次            [1-9]\d{4,10}
+              {n,}    最少n次，最多不限
+
+
+              +  ->  {1,}
+              ?  ->  {0,1}
+
+
+              ^  ->  行首
+              $  ->  行尾
+
+
+         */
+
+        var str = 'apc dpc tpc gpc zpc';
+        var re = /[atz]pc/g;
+        alert(str.match(re));
+        // . 代表任意字符
+        var re2 =/<[^<>]+>/g;                                  //去除html标签
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

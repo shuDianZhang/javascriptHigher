@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function createPerson(name,qq){
+            this.name = name;
+            this.qq = qq;
+        }
+
+        createPerson.prototype.showName = function(){
+            alert('我的名字叫: ' + this.name);
+        }
+
+        createPerson.prototype.showQQ = function(){
+            alert('我的名字叫: ' + this.qq);
+        }
+
+        var obj1 = new createPerson('shujian','506975676');
+        var obj2 = new createPerson('shujiah','506975676');
+        obj1.showName();
+        /*
+             用构造函数加属性
+             原型加方法
+             类名加大写
+         */
+    </script>
+</head>
+<body>
+</body>
+</html>

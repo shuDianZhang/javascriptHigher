@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            position: absolute;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background-color: darkred;
+            position: absolute;
+            left: 250px;
+        }
+    </style>
+    <script src="Drag.js"></script>
+    <script src="LimitDrag.js"></script>
+    <script>
+        window.onload  = function(){
+            new Drag('div1');
+            new LimitDrag('div2');
+        };
+    </script>
+</head>
+<body>
+<div id="div1">普通的拖拽</div>
+<div id="div2">限制范围的拖拽</div>
+</body>
+</html>

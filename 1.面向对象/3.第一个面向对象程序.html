@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+       /*
+           不能在系统对象中(Array,json,Date,RegExp)随意附加方法、属性，否则会覆盖已有方法、属性
+            Date    日期
+            Array   存东西
+            RegExp  正则
+
+            object  没有功能，没有自带的方法，像一张白纸
+        */
+        var obj = new Object();
+        obj.name = 'blue';
+        obj.qq = '25824562';
+        obj.showName = function(){
+            alert('我的名字叫: ' + this.name);
+        };
+        obj.showQQ = function(){
+            alert('我的QQ号: ' + this.qq);
+        };
+        obj.showName();
+        obj.showQQ();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

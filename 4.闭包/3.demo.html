@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+        function box(){
+            var arr = [];
+            for(var i=0 ; i<5; i++){
+               arr[i] = function(){
+                   return i;
+               };
+            }
+            return arr;
+        }
+
+        var b = box();
+        for(var i=0 ;i<5 ;i++){
+            alert(b[i]());
+        }
+        */
+
+        function box(){
+            var arr = [];
+            for(var i=0 ; i<5; i++){
+                arr[i] = (function(num){      //通过自我及时执行函数
+                    return num;
+                })(i);
+            }
+            return arr;
+        }
+
+        var b = box();
+        for(var i=0 ;i<5 ;i++){
+            alert(b[i]);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

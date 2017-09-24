@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+        *  闭包中的this指向window
+        *
+        *
+        *  解除引用很重要 变量 = null;
+        *
+        * */
+        var box = {
+            getThis:function(){
+                return function (){
+                    return this;
+                }
+            }
+        };
+
+        alert(box.getThis()());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+             toString() : 1.把对象转成字符串
+                          2.把数字以n进制的形式输出
+                          3.可以做类型的判断      （最好的方法！！！！！推荐）
+                          alert( Object.prototype.toString.call(arr1));
+                          系统对象下面都是自带的，自己写的对象都是通过原型链找Object下面的
+
+             改写toString()方法
+              Array.prototype.toString = function() {
+               };
+
+            var arr = [1,2,3];
+            alert(typeof arr.toString());  //String     '1,2,3'
+
+         */
+
+        Array.prototype.toString = function(){
+            return this.join('+');
+        }
+        var arr = [1,2,3];
+        alert(arr.toString());
+
+
+        var num = 255;
+        alert(num.toString(16));      //以16进制的形式输出
+
+        // 利用toString做类型的判断 ：
+        var arr1 =[];
+        alert( Object.prototype.toString.call(arr1));   //object array
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

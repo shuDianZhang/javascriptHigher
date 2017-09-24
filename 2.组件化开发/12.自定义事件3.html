@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+           var oDiv = document.getElementById('div1');
+           var oSpan = document.getElementById('span1');
+
+            bindEvent(oDiv,'click',function(){
+               alert(1);
+            });
+
+            bindEvent(oSpan,'show',function(){
+                alert(2);
+            });
+
+            fireEvent(oSpan,'show');
+        };
+
+        function bindEvent(obj,events,fn){
+            //obj   楼层
+            //event 书架
+            //fn    一本书
+            obj.listeners = obj.listeners || {};
+            obj.listeners[events] = obj.listeners[events] || [];
+            obj.listeners[events].push(fn);
+
+            if(obj.addEventListener){
+                obj.addEventListener(events,fn,false);
+            }else{
+                obj.attachEvent('on'+events,fn);
+            }
+        }
+
+        function fireEvent(obj,events){                         //主动触发自定义事件
+            if(obj.listeners && obj.listeners[events]){
+                for(var i=0;i<obj.listeners[events].length;i++){
+                    obj.listeners[events][i]();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+<span id="span1">span1</span>
+</body>
+</html>

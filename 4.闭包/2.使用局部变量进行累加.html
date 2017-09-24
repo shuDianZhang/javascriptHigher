@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //使用匿名函数实现局部变量驻留内存中，从而累加， 过度使用闭包会使性能下降
+
+        //函数每次调用，里面的局部变量都会被刷新掉
+        function box(){
+            var age = 100;
+            return function (){
+                age++;
+                return age;
+            }
+        }
+        var b = box();
+        alert(b());
+        alert(b());
+        alert(b());
+
+        b = null ;   //解除引用，等待垃圾回收
+    </script>
+</head>
+
+<body>
+</body>
+</html>

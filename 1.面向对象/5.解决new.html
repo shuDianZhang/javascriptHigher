@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function createPerson(name,qq){
+            // 系统偷偷的替我们做一些事情
+            //var this = new Object();
+
+            //加工
+            this.name = name;
+            this.qq = qq;
+            this.showName = function(){
+                alert('我的名字叫: ' + this.name);
+            };
+            this.showQQ = function(){
+                alert('我的QQ号: ' + this.qq);
+            };
+
+            //也会偷偷做一些
+            //return this;
+
+        }
+        var obj1 = new createPerson('shujian','506975676');
+        var obj2 = new createPerson('shujiah','506975676');
+        // alert(obj1.showName);  这种写法会弹出函数里面的代码
+        // alert(obj1.showName());  这种写法会执行函数，并弹出undefine
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+             this:  当前发生事件的对象
+                      (new) 当前的方法属于谁(对象)
+         */
+        var arr=[1,2,3];
+        arr.a=12;
+        arr.show = function(){
+            alert(this.a);
+        }
+        arr.show();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

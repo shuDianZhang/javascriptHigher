@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'abcdef 456465 25fgddfgg 4445';
+        //     alert(str.search('b'));
+        //    alert(str.substring(2,5));   //不包括结束位置
+        //    alert(str.charAt(0));
+        var re = new RegExp('a','i');     //JS风格       re 代表 a     i->ignore 忽略大小写
+        var re2 = /a/i;                   //perl风格     re 代表 a
+        var re3 = /\d+/g;                   // \d 转义字符 代表数字     g->global 全局匹配（找到全部）   +  量词、个数  若干（多少都可以）
+        alert(str.match(re3));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
